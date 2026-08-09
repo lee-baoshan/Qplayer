@@ -41,31 +41,53 @@ jobs:
           draft: true          # Draft — attach zip before publishing
           prerelease: ${{ contains(steps.version.outputs.VERSION, 'beta') || contains(steps.version.outputs.VERSION, 'rc') }}
           body: |
-            ## Qplayer ${{ steps.version.outputs.VERSION }}
+            ## Qplayer ${{ steps.version.outputs.VERSION }} — 首个正式版本 🎉
 
-            ### 📥 Download / 下载
+            P2P 边下边播播放器，复刻快播雷达功能。磁力链接粘贴即播，雷达自动发现热门资源。
 
-            | Platform | File | Notes |
-            |----------|------|-------|
-            | Windows 10/11 x64 | `Qplayer-${{ steps.version.outputs.VERSION }}-windows-x64.zip` | Unzip and run |
+            ---
 
-            > **libmpv-2.dll required** — see [libs/README.md](https://github.com/lee-baoshan/Q-Player/blob/main/libs/README.md)
+            ### 📥 下载 / Download
 
-            ### 📋 Installation / 安装
+            | 平台 | 文件 | 说明 |
+            |------|------|------|
+            | Windows 10/11 x64 | `Qplayer-${{ steps.version.outputs.VERSION }}-windows-x64.zip` | 解压即用 |
 
-            1. Download the zip above
-            2. Unzip to any folder
-            3. Place `libmpv-2.dll` next to `Qplayer.exe`
-            4. Run `Qplayer.exe`
+            ---
 
-            ### ✅ Optional dependencies
+            ### 🚀 快速开始
 
-            - [FFmpeg](https://ffmpeg.org/download.html) — for rmvb/flv/avi transcoding
-            - [aria2c](https://aria2.github.io) — for download acceleration
+            1. 下载并解压 `Qplayer-${{ steps.version.outputs.VERSION }}-windows-x64.zip`
+            2. 下载 `libmpv-2.dll` 并放入 Qplayer 目录（[获取说明](https://github.com/lee-baoshan/Qplayer/blob/main/libs/README.md)）
+            3. 运行 `Qplayer.exe`
 
-            ### 📝 Changes
+            ---
 
-            <!-- Add changelog here before publishing -->
+            ### ✨ 主要功能
+
+            - **磁力链接 / .torrent 边下边播** — 粘贴磁力链接回车即播，无需等待下载完成
+            - **雷达** — 自动发现正在分享相同内容的用户，双击热门资源直接播放
+            - **全格式支持** — mkv / mp4 / avi / rmvb 等，配合 FFmpeg 支持更多格式
+            - **本地秒开** — 已下载过的资源下次打开直接秒播，不走 P2P
+            - **自动做种** — 下载完成后自动为其他用户提供上传
+            - **暗色 / 亮色主题** — 支持切换，自动记忆
+
+            ---
+
+            ### ⚙️ 可选依赖
+
+            不安装也能正常使用，安装后体验更好：
+
+            - [FFmpeg](https://ffmpeg.org/download.html) — 支持 rmvb / flv / avi 等格式实时转码
+            - [aria2c](https://aria2.github.io) — P2P 节点不足时自动补速
+
+            ---
+
+            ### ⚠️ 注意事项
+
+            - `libmpv-2.dll` 为必需文件，缺少时无法播放视频，请务必按说明放置
+            - 首次播放磁力链接需等待发现节点，通常需要数秒至数十秒
+            - 雷达功能需要联网
 
             ---
             *Full API documentation: [docs/API.md](https://github.com/lee-baoshan/Q-Player/blob/main/docs/API.md)*
