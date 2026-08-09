@@ -59,22 +59,6 @@
 
 ---
 
-## 🔌 引擎 HTTP API
-
-内置引擎在 `http://127.0.0.1:8800` 暴露本地 API，可用于第三方集成。
-
-📖 **[完整 API 文档](docs/API.md)**
-
-| 路径 | 方法 | 说明 |
-|------|------|------|
-| `/api/add` | POST | 添加资源 `{"source": "magnet:..."}` |
-| `/api/status` | GET | 下载与做种状态 |
-| `/api/radar` | GET | 局域网+全球雷达快照 |
-| `/api/stop` | POST | 停止当前下载 |
-| `/stream/<index>` | GET | 媒体流（支持 Range） |
-
----
-
 ## ❤️ 支持项目
 
 如果 Qplayer 对你有帮助，欢迎赞助：

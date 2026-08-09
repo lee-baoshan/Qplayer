@@ -59,23 +59,6 @@ Both **LAN Radar** and **Global Radar** work **out of the box** — zero configu
 
 ---
 
-## 🔌 Engine HTTP API
-
-The embedded engine exposes a local API on `http://127.0.0.1:8800`.  
-Third-party integrations (media center plugins, scripts, etc.) can use this interface.
-
-📖 **[Full API Documentation](docs/API.md)**
-
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/api/add` | POST | Add source `{"source": "magnet:..."}` |
-| `/api/status` | GET | Download & seeding status |
-| `/api/radar` | GET | LAN + Global radar snapshot |
-| `/api/stop` | POST | Stop current download |
-| `/stream/<index>` | GET | Media stream (Range supported) |
-
----
-
 ## ❤️ Support
 
 If Qplayer is useful to you, consider sponsoring development:
