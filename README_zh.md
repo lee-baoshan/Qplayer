@@ -1,0 +1,96 @@
+# Qplayer
+
+> P2P 边下边播播放器 — 局域网+全球雷达，支持磁力链接、BitTorrent
+
+[![License: Proprietary](https://img.shields.io/badge/License-专有-red.svg)](#license)
+[![Platform](https://img.shields.io/badge/Platform-Windows-lightgrey)](https://github.com/lee-baoshan/Q-Player/releases)
+[![Releases](https://img.shields.io/github/v/release/lee-baoshan/Q-Player)](https://github.com/lee-baoshan/Q-Player/releases)
+[![Stars](https://img.shields.io/github/stars/lee-baoshan/Q-Player?style=social)](https://github.com/lee-baoshan/Q-Player/stargazers)
+
+**[English](README.md)** · [下载](https://github.com/lee-baoshan/Q-Player/releases) · [反馈问题](https://github.com/lee-baoshan/Q-Player/issues) · [功能建议](https://github.com/lee-baoshan/Q-Player/issues)
+
+---
+
+## ✨ 功能特性
+
+| 功能 | 说明 |
+|------|------|
+| **P2P 边下边播** | libtorrent 引擎，顺序下载 + 头尾优先，打开即播 |
+| **磁力链接** | 粘贴 `magnet:?xt=...` 直接播放 |
+| **局域网雷达** | UDP 广播发现同网段节点，零 DHT 延迟直连 |
+| **全球雷达** | DHT 全局 peer 发现 + 可选 Cloudflare Workers 全球热榜 |
+| **全格式播放** | mpv 解码 mkv/mp4/webm/avi/rmvb；非原生格式 FFmpeg 转码 |
+| **本地秒开** | 已下载资源自动索引，重复打开不走 P2P |
+| **自动做种** | 换源/重启后继续上传，后台无感 |
+| **暗/亮主题** | 一键切换，持久化 |
+| **字幕** | 自动扫描、拖放加载、样式编辑器 |
+| **色彩校正** | 饱和度/对比度/亮度/gamma/锐化/色温实时调节 |
+
+---
+
+## 📦 下载安装
+
+**无需 Python。** 从 Releases 下载预构建包，解压即用。
+
+➡️ **[最新版本下载](https://github.com/lee-baoshan/Q-Player/releases/latest)**
+
+### 系统要求
+
+- Windows 10 / 11 x64
+- `libmpv-2.dll`（与 `Qplayer.exe` 放在同一目录，见 [libs/README.md](libs/README.md)）
+- 可选：[FFmpeg](https://ffmpeg.org/download.html)（rmvb/flv 等格式转码）
+- 可选：[aria2c](https://aria2.github.io)（下载加速）
+
+### 安装步骤
+
+1. 从 Releases 下载 `Qplayer-vX.X.X-windows-x64.zip`
+2. 解压到任意目录
+3. 将 `libmpv-2.dll` 放入 `Qplayer.exe` 所在目录（见 [libs/README.md](libs/README.md)）
+4. 运行 `Qplayer.exe`
+
+---
+
+## 🌐 全球雷达
+
+**局域网雷达**和**全球雷达**均**开箱即用**，无需任何配置。
+
+- **局域网雷达**：通过 UDP 广播即时发现同网段的 Qplayer 节点
+- **全球雷达**：自动与全球所有 Qplayer 用户共享热门资源列表
+
+---
+
+## 🔌 引擎 HTTP API
+
+内置引擎在 `http://127.0.0.1:8800` 暴露本地 API，可用于第三方集成。
+
+📖 **[完整 API 文档](docs/API.md)**
+
+| 路径 | 方法 | 说明 |
+|------|------|------|
+| `/api/add` | POST | 添加资源 `{"source": "magnet:..."}` |
+| `/api/status` | GET | 下载与做种状态 |
+| `/api/radar` | GET | 局域网+全球雷达快照 |
+| `/api/stop` | POST | 停止当前下载 |
+| `/stream/<index>` | GET | 媒体流（支持 Range） |
+
+---
+
+## ❤️ 支持项目
+
+如果 Qplayer 对你有帮助，欢迎赞助：
+
+[![Ko-fi](https://img.shields.io/badge/Ko--fi-支持一下-ff5e5b?logo=ko-fi&logoColor=white)](https://ko-fi.com/qplayer)
+[![GitHub Sponsors](https://img.shields.io/badge/GitHub-赞助-ea4aaa?logo=github&logoColor=white)](https://github.com/sponsors/lee-baoshan)
+[![爱发电](https://img.shields.io/badge/爱发电-支持-946ce6)](https://afdian.com)
+
+---
+
+## 📄 许可证
+
+**源代码**：核心引擎与 UI 源码为专有代码，不随本仓库分发。
+
+**二进制程序**：预构建版本供个人非商业使用，详见 [LICENSE](LICENSE)。
+
+**Cloudflare Worker**（`cloudflare/`）：MIT，可自由部署。
+
+**内容免责声明**：本软件不提供、不存储、不索引任何受版权保护的内容，用户自行承担使用责任。

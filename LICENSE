@@ -1,0 +1,87 @@
+Qplayer — Proprietary License
+
+Copyright (c) 2026 lee-baoshan. All rights reserved.
+
+===============================================================================
+BINARY DISTRIBUTION LICENSE
+===============================================================================
+
+Permission is hereby granted, free of charge, to any individual ("User") to:
+  - Download and use pre-built binary releases of Qplayer for personal,
+    non-commercial purposes
+  - Run Qplayer on an unlimited number of devices owned by the User
+
+The following are NOT permitted without explicit written permission:
+  - Redistribution of the binary in any form (paid or free)
+  - Commercial use of the binary
+  - Reverse engineering, decompiling, or disassembling the binary
+  - Creating derivative works based on the binary
+
+===============================================================================
+CLOUDFLARE WORKER (cloudflare/ directory)
+===============================================================================
+
+The files in the cloudflare/ directory are released under the MIT License:
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
+
+===============================================================================
+THIRD-PARTY COMPONENTS
+===============================================================================
+
+The binary distribution includes or dynamically links the following open-source
+components. Their respective licenses are reproduced below.
+
+libmpv — LGPL-2.1+
+  https://mpv.io / https://github.com/mpv-player/mpv
+  The full LGPL-2.1 license text is available at:
+  https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
+
+libtorrent — BSD-3-Clause
+  https://libtorrent.org
+  Copyright (c) 2003-2024, Arvid Norberg
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  1. Redistributions of source code must retain the above copyright notice,
+     this list of conditions and the following disclaimer.
+  2. Redistributions in binary form must reproduce the above copyright notice,
+     this list of conditions and the following disclaimer in the documentation.
+  3. Neither the name of the author nor the names of contributors may be used
+     to endorse or promote products derived from this software without
+     specific prior written permission.
+
+PySide6 — LGPL-3.0
+  https://doc.qt.io/qtforpython/
+  PySide6 is dynamically linked. The LGPL-3.0 license requires that users
+  can replace PySide6 with a compatible version. This binary is built against
+  the standard PySide6 package available at https://pypi.org/project/PySide6/
+  The full LGPL-3.0 text is available at:
+  https://www.gnu.org/licenses/lgpl-3.0.html
+
+FFmpeg — LGPL-2.1+ (optional, not bundled)
+  https://ffmpeg.org — must be installed separately by the user.
+
+aria2 — GPL-2.0+ (optional, not bundled)
+  https://aria2.github.io — must be installed separately by the user.
+
+===============================================================================
+DISCLAIMER
+===============================================================================
+
+THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED. IN NO EVENT SHALL THE COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM,
+DAMAGES OR OTHER LIABILITY ARISING FROM THE USE OF THIS SOFTWARE.
+
+CONTENT DISCLAIMER: This software does not host, index, or distribute any
+copyrighted content. Users are solely responsible for ensuring their use
+complies with applicable laws in their jurisdiction.

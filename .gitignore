@@ -1,0 +1,60 @@
+# ── Python 源码目录（不入库，仅本地开发）────────────────────────────────────
+engine/
+desktop/
+tests/
+
+# ── Python ──────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+
+# ── 虚拟环境 ─────────────────────────────────────────────
+.venv/
+venv/
+env/
+
+# ── PyInstaller 构建产物 ──────────────────────────────────
+dist/
+build/
+*.spec
+*.pkg
+
+# ── PyArmor ──────────────────────────────────────────────
+.obf/
+.build_work/
+pyarmor.bug.log
+pyarmor_runtime_*/
+
+# ── 运行时数据 ───────────────────────────────────────────
+downloads/
+.qplayer/
+.qp_transcode/
+*.torrent.resume
+.lt_state/
+
+# ── 二进制依赖 ───────────────────────────────────────────
+libs/libmpv-2.dll
+libs/libmpv*.dll
+libs/libmpv*.so
+libs/libmpv*.dylib
+
+# ── IDE / 系统文件 ────────────────────────────────────────
+.idea/
+.vscode/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+
+# ── 测试缓存 ─────────────────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ── 编辑器备份 ───────────────────────────────────────────
+*.orig
+*.bak
+*.tmp
+

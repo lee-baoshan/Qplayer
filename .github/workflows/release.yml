@@ -1,0 +1,71 @@
+name: Create Release
+
+# 触发方式：推送 v* 格式的 tag
+# 不在 CI 构建——直接接收手动上传的二进制文件
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Release tag (e.g. v0.1.0)'
+        required: true
+        type: string
+
+jobs:
+  create-release:
+    name: Create GitHub Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Get version
+        id: version
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "VERSION=${{ github.event.inputs.tag }}" >> $GITHUB_OUTPUT
+          else
+            echo "VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create Release (draft — upload binaries manually)
+        uses: softprops/action-gh-release@v2
+        with:
+          name: "Qplayer ${{ steps.version.outputs.VERSION }}"
+          tag_name: ${{ steps.version.outputs.VERSION }}
+          draft: true          # Draft — attach zip before publishing
+          prerelease: ${{ contains(steps.version.outputs.VERSION, 'beta') || contains(steps.version.outputs.VERSION, 'rc') }}
+          body: |
+            ## Qplayer ${{ steps.version.outputs.VERSION }}
+
+            ### 📥 Download / 下载
+
+            | Platform | File | Notes |
+            |----------|------|-------|
+            | Windows 10/11 x64 | `Qplayer-${{ steps.version.outputs.VERSION }}-windows-x64.zip` | Unzip and run |
+
+            > **libmpv-2.dll required** — see [libs/README.md](https://github.com/lee-baoshan/Q-Player/blob/main/libs/README.md)
+
+            ### 📋 Installation / 安装
+
+            1. Download the zip above
+            2. Unzip to any folder
+            3. Place `libmpv-2.dll` next to `Qplayer.exe`
+            4. Run `Qplayer.exe`
+
+            ### ✅ Optional dependencies
+
+            - [FFmpeg](https://ffmpeg.org/download.html) — for rmvb/flv/avi transcoding
+            - [aria2c](https://aria2.github.io) — for download acceleration
+
+            ### 📝 Changes
+
+            <!-- Add changelog here before publishing -->
+
+            ---
+            *Full API documentation: [docs/API.md](https://github.com/lee-baoshan/Q-Player/blob/main/docs/API.md)*

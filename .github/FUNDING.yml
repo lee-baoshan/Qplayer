@@ -1,0 +1,9 @@
+# GitHub Sponsors and other funding platforms
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/displaying-a-sponsor-button-in-your-repository
+
+github: lee-baoshan          # GitHub Sponsors
+ko_fi: qplayer               # Ko-fi (global, no fees on donations)
+# patreon:                   # Patreon (uncomment when set up)
+# open_collective:           # Open Collective (uncomment when set up)
+custom:
+  - https://afdian.com       # 爱发电 (China)
