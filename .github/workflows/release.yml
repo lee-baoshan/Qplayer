@@ -41,7 +41,7 @@ jobs:
           draft: true          # Draft — attach zip before publishing
           prerelease: ${{ contains(steps.version.outputs.VERSION, 'beta') || contains(steps.version.outputs.VERSION, 'rc') }}
           body: |
-            ## Qplayer ${{ steps.version.outputs.VERSION }} — 首个正式版本 🎉
+            ## Qplayer ${{ steps.version.outputs.VERSION }}
 
             P2P 边下边播播放器，复刻快播雷达功能。磁力链接粘贴即播，雷达自动发现热门资源。
 
