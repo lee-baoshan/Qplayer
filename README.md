@@ -1,9 +1,9 @@
 # Qplayer
 
-> P2P streaming media player — LAN & Global Radar, magnet links, BitTorrent
+> P2P streaming media player — Radar peer discovery, magnet links, BitTorrent, play while downloading
 
 [![License: Proprietary](https://img.shields.io/badge/License-Proprietary-red.svg)](#license)
-[![Platform](https://img.shields.io/badge/Platform-Windows-lightgrey)](https://github.com/lee-baoshan/Qplayer/releases)
+[![Platform](https://img.shields.io/badge/Platform-Windows%2010%2F11-lightgrey)](https://github.com/lee-baoshan/Qplayer/releases)
 [![Releases](https://img.shields.io/github/v/release/lee-baoshan/Qplayer)](https://github.com/lee-baoshan/Qplayer/releases)
 [![Stars](https://img.shields.io/github/stars/lee-baoshan/Qplayer?style=social)](https://github.com/lee-baoshan/Qplayer/stargazers)
 
@@ -11,51 +11,56 @@
 
 ---
 
+![Qplayer Screenshot](assets/screenshot.png)
+
+---
+
 ## ✨ Features
 
 | Feature | Description |
 |---------|-------------|
-| **P2P Streaming** | libtorrent engine — sequential download with head/tail priority, play while downloading |
-| **Magnet Links** | Paste `magnet:?xt=...` and play instantly |
-| **LAN Radar** | Discover peers on the same network via UDP broadcast — zero DHT delay |
-| **Global Radar** | Worldwide peer discovery via DHT + real-time hot-list shared across all users |
-| **All Formats** | mpv decoding for mkv/mp4/webm/avi/rmvb; non-native formats via FFmpeg transcoding |
-| **Instant Replay** | Completed downloads indexed locally — reopens without P2P |
-| **Auto-Seeding** | Continues uploading silently after source switch or restart |
-| **Dark / Light Theme** | One-click toggle, persisted |
-| **Subtitles** | Auto-scan, drag-and-drop, style editor |
-| **Color Correction** | Real-time saturation / contrast / brightness / gamma / sharpness / white balance |
+| **P2P Streaming** | Play while downloading — no need to wait for the full file |
+| **Magnet Links** | Paste `magnet:?xt=...` and hit Enter, playback starts immediately |
+| **Radar** | Automatically discovers nearby and global peers sharing the same content |
+| **All Formats** | mkv / mp4 / avi / rmvb and more via mpv + FFmpeg transcoding |
+| **Playlist** | Manage multiple torrents, switch between them seamlessly |
+| **Instant Replay** | Already downloaded files open instantly without P2P |
+| **Auto-Seeding** | Continues uploading after playback, giving back to the network |
+| **Subtitles** | Auto-scan, drag-and-drop `.srt` / `.ass`, style editor |
+| **Color Correction** | Saturation / contrast / brightness / gamma / sharpness in real time |
+| **Dark / Light Theme** | One-click toggle, remembered across sessions |
 
 ---
 
 ## 📦 Download & Install
 
-**No Python required.** Download the pre-built package from Releases and run directly.
+**No Python required.** Download and run directly.
 
 ➡️ **[Latest Release](https://github.com/lee-baoshan/Qplayer/releases/latest)**
 
 ### Requirements
 
 - Windows 10 / 11 x64
-- `libmpv-2.dll` in the same folder as `Qplayer.exe` (see [libs/README.md](libs/README.md))
-- Optional: [FFmpeg](https://ffmpeg.org/download.html) for rmvb/flv transcoding
-- Optional: [aria2c](https://aria2.github.io) for download acceleration
+- `libmpv-2.dll` placed in the same folder as `Qplayer.exe` — see [How to get libmpv-2.dll](libs/README.md)
+- Optional: [FFmpeg](https://ffmpeg.org/download.html) — for rmvb / flv transcoding
+- Optional: [aria2c](https://aria2.github.io) — for download acceleration
 
-### Installation
+### Steps
 
 1. Download `Qplayer-vX.X.X-windows-x64.zip` from Releases
 2. Unzip to any folder
-3. Place `libmpv-2.dll` in the same folder as `Qplayer.exe` (see [libs/README.md](libs/README.md))
+3. Place `libmpv-2.dll` in the same folder as `Qplayer.exe`
 4. Run `Qplayer.exe`
 
 ---
 
-## 🌐 Global Radar
+## 📡 Radar
 
-Both **LAN Radar** and **Global Radar** work **out of the box** — zero configuration needed.
+Radar discovers peers who are sharing the same content — nearby (LAN) and worldwide — and lets you connect directly for faster playback.
 
-- **LAN Radar**: instantly discovers Qplayer peers on your local network via UDP broadcast
-- **Global Radar**: automatically syncs with a real-time hot-list shared across all Qplayer users worldwide
+- Nearby peers connect instantly via LAN with no DHT delay
+- Global peers are discovered automatically via DHT and synced in real time
+- No IP addresses or personal information are ever displayed
 
 ---
 
@@ -70,9 +75,9 @@ If Qplayer is useful to you, consider sponsoring development:
 
 ## 📄 License
 
-**Binaries**: Pre-built releases are provided for personal, non-commercial use. See [LICENSE](LICENSE) for full terms.
+Pre-built releases are for personal, non-commercial use. See [LICENSE](LICENSE) for full terms.
 
-**Third-party components** used in the binary distribution:
+Third-party components in the binary:
 
 | Component | License |
 |-----------|---------|
