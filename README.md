@@ -29,6 +29,7 @@
 | **Subtitles** | Auto-scan, drag-and-drop `.srt` / `.ass`, style editor |
 | **Color Correction** | Saturation / contrast / brightness / gamma / sharpness in real time |
 | **Dark / Light Theme** | One-click toggle, remembered across sessions |
+| **Auto-Update** | Notifies you when a new version is available |
 
 ---
 
@@ -42,7 +43,7 @@
 
 - Windows 10 / 11 x64
 - `libmpv-2.dll` placed in the same folder as `Qplayer.exe` — see [How to get libmpv-2.dll](libs/README.md)
-- Optional: [FFmpeg](https://ffmpeg.org/download.html) — for rmvb / flv transcoding
+- Optional: [FFmpeg](https://ffmpeg.org/download.html) — for rmvb / flv transcoding (auto-downloaded on first run if missing)
 - Optional: [aria2c](https://aria2.github.io) — for download acceleration
 
 ### Steps
@@ -51,6 +52,8 @@
 2. Unzip to any folder
 3. Place `libmpv-2.dll` in the same folder as `Qplayer.exe`
 4. Run `Qplayer.exe`
+
+> **FFmpeg** is optional. If missing, Qplayer will offer to download it automatically on first launch.
 
 ---
 

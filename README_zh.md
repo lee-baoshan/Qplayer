@@ -29,6 +29,7 @@
 | **字幕** | 自动扫描、拖放加载 `.srt` / `.ass`，支持样式编辑 |
 | **色彩校正** | 饱和度 / 对比度 / 亮度 / gamma / 锐化实时调节 |
 | **暗色 / 亮色主题** | 一键切换，自动记忆 |
+| **自动更新** | 有新版本时自动提示，一键跳转下载 |
 
 ---
 
@@ -42,7 +43,7 @@
 
 - Windows 10 / 11 x64
 - `libmpv-2.dll` 与 `Qplayer.exe` 放在同一目录 — 见 [如何获取 libmpv-2.dll](libs/README.md)
-- 可选：[FFmpeg](https://ffmpeg.org/download.html) — rmvb / flv 格式转码
+- 可选：[FFmpeg](https://ffmpeg.org/download.html) — rmvb / flv 格式转码（首次启动时如缺少会提示自动下载）
 - 可选：[aria2c](https://aria2.github.io) — 下载加速
 
 ### 安装步骤
@@ -51,6 +52,8 @@
 2. 解压到任意目录
 3. 将 `libmpv-2.dll` 放入 `Qplayer.exe` 所在目录
 4. 运行 `Qplayer.exe`
+
+> **FFmpeg 可选**。如缺少，Qplayer 首次启动时会提示自动下载。
 
 ---
 
