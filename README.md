@@ -30,6 +30,7 @@
 | **Color Correction** | Saturation / contrast / brightness / gamma / sharpness in real time |
 | **Dark / Light Theme** | One-click toggle, remembered across sessions |
 | **Auto-Update** | Notifies you when a new version is available |
+| **Language** | English & Chinese |
 
 ---
 
