@@ -21,6 +21,7 @@
 |---------|-------------|
 | **P2P Streaming** | Play while downloading — no need to wait for the full file |
 | **Magnet Links** | Paste `magnet:?xt=...` and hit Enter, playback starts immediately |
+| **Load Torrent** | Click "Add," select the path to the `*.torrent` file, and the file will be automatically loaded into the playlist. |
 | **Radar** | Automatically discovers nearby and global peers sharing the same content |
 | **All Formats** | mkv / mp4 / avi / rmvb and more via mpv + FFmpeg transcoding |
 | **Playlist** | Manage multiple torrents, switch between them seamlessly |
